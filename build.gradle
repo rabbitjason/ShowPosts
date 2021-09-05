@@ -33,4 +33,5 @@ ext {
     roomVersion = '1.1.1'
     archLifecycleVersion = '1.1.1'
     retrofitVersion = '2.0.2'
+    appcompat = "28.0.0"
 }
