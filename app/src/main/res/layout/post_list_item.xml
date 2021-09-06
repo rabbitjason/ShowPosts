@@ -5,11 +5,12 @@
 
     <data>
         <variable name="post" type="co.nz.demo.showposts.service.model.Post"/>
+        <variable name="callback" type="co.nz.demo.showposts.view.callback.PostClickCallBack"/>
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#FFFFFFFF"
         android:orientation="vertical">
 
@@ -19,6 +20,7 @@
         android:orientation="horizontal"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:onClick="@{() ->  callback.onClick(post)}"
         app:cardUseCompatPadding="true">
 
         <LinearLayout

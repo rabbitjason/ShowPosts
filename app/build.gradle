@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "co.nz.demo.showposts"
-        minSdkVersion 24
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -57,6 +57,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
 
     // Lifecycle components
+    implementation "android.arch.lifecycle:runtime:$rootProject.archLifecycleVersion"
     implementation "android.arch.lifecycle:extensions:$rootProject.archLifecycleVersion"
     annotationProcessor "android.arch.lifecycle:compiler:$rootProject.archLifecycleVersion"
 
