@@ -30,7 +30,7 @@ public class PostListViewModel extends AndroidViewModel {
      * Get posts from local or cache
      */
     public  List<Post> loadDataInfo() {
-        Utils.printMsg( " List fragment load data info");
+        Utils.printMsg( " Load post list data");
         List<Post> posts = AppDatabase.getInstance(this.getApplication()).postDao().getAllPosts();
         postListObserableLocal.setValue(posts);
         Utils.printPostInfo(posts);

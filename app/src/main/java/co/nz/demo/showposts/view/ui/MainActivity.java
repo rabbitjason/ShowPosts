@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
      * @param post
      */
     public void show(Post post) {
-        // Todo
-        Utils.printMsg("Click post item: " + post.title);
+        //Utils.printMsg("Click post item: " + String.valueOf(post.id));
+        Intent intent = new Intent(this, PostDetailActivity.class);
+        intent.putExtra(PostDetailActivity.POST_ID_ARG, String.valueOf(post.id));
+        startActivity(intent);
     }
 }
