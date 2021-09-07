@@ -38,9 +38,10 @@ public class PostListFragment extends LifecycleFragment {
                 DataBindingUtil.inflate(inflater, R.layout.fragment_post_list, container, false);
 
         mPostListAdapter = new PostListAdapter(mPostClickCallBack);
-
         mFragmentPostListBinding.postList.setAdapter(mPostListAdapter);
+
         mFragmentPostListBinding.setIsLoading(true);
+
         return mFragmentPostListBinding.getRoot();
     }
 

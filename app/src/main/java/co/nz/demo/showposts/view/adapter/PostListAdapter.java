@@ -50,7 +50,7 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.PostVi
      * @param postList
      */
     public void setPostList(final List<? extends Post> postList) {
-        if (this.mPostList == null) { //新增
+        if (this.mPostList == null) {
             this.mPostList = postList;
             notifyItemRangeInserted(0, postList.size());
         } else {

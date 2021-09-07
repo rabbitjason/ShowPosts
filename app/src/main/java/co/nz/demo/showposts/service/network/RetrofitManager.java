@@ -74,7 +74,7 @@ public class RetrofitManager {
         return data;
     }
 
-    public MutableLiveData<List<Comment>> getCommentList(String postId) {
+    public MutableLiveData<List<Comment>> getCommentListByPostId(String postId) {
 
         final MutableLiveData<List<Comment>> data = new MutableLiveData<>();
 

@@ -18,11 +18,13 @@ public class PostViewModel extends AndroidViewModel {
 
     private MutableLiveData<Post> mPostObservableLocal = new MutableLiveData<>();
     private MutableLiveData<Post> mPostObservableNetwork = new MutableLiveData<>();
-    private final String postID;
+
+
+    //private final String postID;
 
     public PostViewModel(@NonNull Application application, String postID) {
         super(application);
-        this.postID = postID;
+        //this.postID = postID;
     }
 
     public Post loadDataInfo(String postId) {
