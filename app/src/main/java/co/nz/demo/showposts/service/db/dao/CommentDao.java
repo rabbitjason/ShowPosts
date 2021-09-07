@@ -16,7 +16,7 @@ public interface CommentDao {
     List<Comment> getAllComments();
 
     @Query("SELECT * FROM comment_table WHERE  postId = :postId")
-    Comment getPostByUserId(long postId);
+    Comment getCommentsByPostId(long postId);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Comment> comments);

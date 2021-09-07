@@ -17,6 +17,9 @@ public interface PostDao {
     @Query("SELECT * FROM post_table WHERE  userId = :userId")
     Post getPostByUserId(long userId);
 
+    @Query("SELECT * FROM post_table WHERE  id = :postId")
+    Post getPostById(long postId);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Post> posts);
 

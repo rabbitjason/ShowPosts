@@ -61,7 +61,6 @@ public class RetrofitManager {
                 AppDatabase.getInstance(mContext).postDao().insertAll(posts);
                 // Observer mode, callback to update the UI
                 data.setValue(posts);
-
                 Log.i(Constants.TAG, "onResponse()");
             }
 
@@ -79,7 +78,7 @@ public class RetrofitManager {
 
         final MutableLiveData<List<Comment>> data = new MutableLiveData<>();
 
-        netWorkApiService.getCommentList(postId).enqueue(new Callback<List<Comment>>() {
+        netWorkApiService.getCommentsByPostId(postId).enqueue(new Callback<List<Comment>>() {
             @Override
             public void onResponse(Call<List<Comment>> call, Response<List<Comment>> response) {
                 List<Comment> comments = response.body();
@@ -93,6 +92,27 @@ public class RetrofitManager {
 
             @Override
             public void onFailure(Call<List<Comment>> call, Throwable t) {
+                data.setValue(null);
+                Log.i(Constants.TAG, "onFailure()");
+            }
+        });
+
+        return data;
+    }
+
+    public MutableLiveData<Post> searchPost(String postId) {
+        final MutableLiveData<Post> data = new MutableLiveData<>();
+
+        netWorkApiService.searchPost(postId).enqueue(new Callback<Post>() {
+            @Override
+            public void onResponse(Call<Post> call, Response<Post> response) {
+                Post post = response.body();
+                data.setValue(post);
+                Log.i(Constants.TAG, "onResponse()");
+            }
+
+            @Override
+            public void onFailure(Call<Post> call, Throwable t) {
                 data.setValue(null);
                 Log.i(Constants.TAG, "onFailure()");
             }

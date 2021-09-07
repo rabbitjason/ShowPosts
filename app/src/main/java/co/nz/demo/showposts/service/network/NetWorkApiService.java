@@ -6,6 +6,7 @@ import co.nz.demo.showposts.service.model.Comment;
 import co.nz.demo.showposts.service.model.Post;
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface NetWorkApiService {
@@ -17,5 +18,9 @@ public interface NetWorkApiService {
 
     //Get a list of Comment of a Post
     @GET("comments")
-    Call<List<Comment>> getCommentList(@Query("postId") String postId);
+    Call<List<Comment>> getCommentsByPostId(@Query("postId") String postId);
+
+    // Query a post by its id
+    @GET("posts/{postId}")
+    Call<Post> searchPost(@Path("postId") String postId);
 }
